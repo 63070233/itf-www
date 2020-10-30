@@ -28,7 +28,7 @@
             จบ ครับจบ55555
         </h2>
         <h3>นี่ครับเพจที่บอก</h3>
-        <a href='http://www.it.kmitl.ac.th'>This is a Link</a>
+        <a href='https://th-th.facebook.com/softjoke'><----</a>
 
         
     </body>
