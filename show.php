@@ -3,6 +3,7 @@
 <title>ITF Lab</title>
 </head>
 <body>
+<div class="container">
 <?php
 $conn = mysqli_init();
 mysqli_real_connect($conn, 'itf-nattapong.mysql.database.azure.com', 'it63070233@itf-nattapong', 'WGFuhe86', 'ITFLAB', 3306);
@@ -34,5 +35,6 @@ while($Result = mysqli_fetch_array($res))
 <?php
 mysqli_close($conn);
 ?>
+</div>
 </body>
 </html>
