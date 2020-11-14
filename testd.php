@@ -43,8 +43,6 @@ while($row = mysqli_fetch_assoc($result)) { ?>
 </td>
 </tr>
 <?php $count++; } ?>
-mysqli_close($conn);
-?>
 </div>
 </body>
 </html>
