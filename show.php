@@ -18,9 +18,7 @@ if (mysqli_connect_errno($conn))
 }
 $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
-<div class="container">
-  <h2>Dark Striped Table</h2>
-  <p>Combine .table-dark and .table-striped to create a dark, striped table:</p>            
+<div class="container">           
   <table class="table table-dark table-striped">
     <thead>
   <tr>
@@ -34,7 +32,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 while($Result = mysqli_fetch_array($res))
 {
 ?>
-  <tr class="table-dark text-dark">
+  <tr class="table-success text-dark">
     <td align="center"><?php echo $Result['Name'];?></div></td>
     <td align="center"><?php echo $Result['Comment'];?></td>
     <td align="center"><?php echo $Result['Link'];?></td>
