@@ -45,7 +45,7 @@ while($Result = mysqli_fetch_array($res))
 ?>
 </table>
 <center>
-<button type="button" class="btn btn-warning"><a href="edit.php"?id=<?php echo $Result['id']; ?>เพิ่ม</a></button></center>
+<button type="button" class="btn btn-warning"><a href="form.html"?id=<?php echo $Result['id']; ?>เพิ่ม</a></button></center>
 <?php
 mysqli_close($conn);
 ?>
