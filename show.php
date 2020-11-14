@@ -39,13 +39,12 @@ while($Result = mysqli_fetch_array($res))
     <td align="center"><a href="delete.php?id=<?php echo $Result['id']; ?>">ลบ</a></td>
     <td align="center"><a href="edit.php"?id=<?php echo $Result['id']; ?>>แก้ไข</a></td>
   </tr>
-    <a href="edit.php"?id=<?php echo $Result['id']; ?>>แก้ไข</a>
 <?php
 }
 ?>
 </table>
-<center>
-<button type="button" class="btn btn-warning"><a href="form.html"?id=<?php echo $Result['id']; ?>เพิ่ม</a></button></center>
+<center><h1>
+<button type="button" class="btn btn-warning"><a href="form.html"?id=<?php echo $Result['id']; ?>เพิ่ม</a></button></center></h1>
 <?php
 mysqli_close($conn);
 ?>
