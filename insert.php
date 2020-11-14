@@ -25,3 +25,6 @@ if (mysqli_query($conn, $sql)) {
 mysqli_close($conn);
 
 ?>
+<?php
+<button type="button" class="btn btn-warning"><a href="show.html">ตาราง</a></button></center></h1>
+?>
