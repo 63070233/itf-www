@@ -35,7 +35,7 @@ while($Result = mysqli_fetch_array($res))
     <td><?php echo $Result['Comment'];?></td>
     <td><?php echo $Result['Link'];?></td>
     <td><?php echo $Result['ลบ'];?></td>
-    <td><?php echo $Result['แก้ไข'];?></td>
+    <td><a href="edit.php?id=<?php echo $Result['แก้ไข']; ?>">Edit</a></td>
   </tr>
 <?php
 }
