@@ -21,6 +21,7 @@ if (mysqli_query($conn, $sql)) {
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
+<h1><center><button type="button" class="btn btn-warning"><a href="show.php">หน้าหลัก</a></button></center></h1>
   
 mysqli_close($conn);
 ?>
