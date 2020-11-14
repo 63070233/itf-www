@@ -34,7 +34,8 @@ $result = mysqli_query($con,$sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
 <tr><td align="center"><?php echo $count; ?></td>
 <td align="center"><?php echo $row["name"]; ?></td>
-<td align="center"><?php echo $row["age"]; ?></td>
+<td align="center"><?php echo $row["comment"]; ?></td>
+<td align="center"><?php echo $row["link"]; ?></td>
 <td align="center">
 <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
 </td>
