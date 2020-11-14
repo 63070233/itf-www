@@ -23,5 +23,5 @@ if (mysqli_query($conn, $sql)) {
   }
   
 mysqli_close($conn);
-<h1><button type="button" class="btn btn-warning"><a href="show.php">หน้าหลัก</a></button></h1>
+
 ?>
