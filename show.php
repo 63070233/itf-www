@@ -18,11 +18,15 @@ if (mysqli_connect_errno($conn))
 }
 $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
-<table width="600" border="1">
+<div class="container">
+  <h2>Dark Striped Table</h2>
+  <p>Combine .table-dark and .table-striped to create a dark, striped table:</p>            
+  <table class="table table-dark table-striped">
+    <thead>
   <tr>
     <th width="100"> <div align="center">Name</div></th>
     <th width="350"> <div align="center">Comment </div></th>
-    <th width="150"> <div align="center">Link </div></th>
+    <th width="200"> <div align="center">Link </div></th>
     <th width="150"> <div align="center">ลบ </div></th>
     <th width="150"> <div align="center">แก้ไข </div></th>
   </tr>
