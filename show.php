@@ -44,7 +44,7 @@ while($Result = mysqli_fetch_array($res))
 ?>
 </table>
 <center><h1>
-<button type="button" class="btn btn-warning"><a href="form.html"เพิ่ม></a></button></center></h1>
+<button type="button" class="btn btn-warning"><a href="form.html">เพิ่ม</a></button></center></h1>
 <?php
 mysqli_close($conn);
 ?>
