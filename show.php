@@ -30,15 +30,13 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 while($Result = mysqli_fetch_array($res))
 {
 ?>
-  <td class="table-dark text-dark">
+  <tr class="table-dark text-dark">
     <td align="center"><?php echo $Result['Name'];?></div></td>
     <td align="center"><?php echo $Result['Comment'];?></td>
     <td align="center"><?php echo $Result['Link'];?></td>
-  <td class="table-danger">
     <td align="center"><a href="delete.php?id=<?php echo $Result['id']; ?>">ลบ</a></td>
     <td align="center"><a href="edit.php"?id=<?php echo $Result['id']; ?>>แก้ไข</a></td>
-  </td>
-  </td>
+  </tr>
 <?php
 }
 ?>
