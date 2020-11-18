@@ -36,8 +36,8 @@ while($Result = mysqli_fetch_array($res))
     <td align="center"><?php echo $Result['Name'];?></div></td>
     <td align="center"><?php echo $Result['Comment'];?></td>
     <td align="center"><?php echo $Result['Link'];?></td>
-    <td align="center"><a href="delete.php?id=<?php echo $Result['id']; ?>">ลบ</a></td>
-    <td align="center"><a href="edit.php"?id=<?php echo $Result['id']; ?>>แก้ไข</a></td>
+    <td align="center"><a href="form_delete.php?id=<?php echo $Result['id']; ?>">ลบ</a></td>
+    <td align="center"><a href="form_edit.php"?id=<?php echo $Result['id']; ?>>แก้ไข</a></td>
   </tr>
 <?php
 }
