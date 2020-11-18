@@ -1,49 +1,45 @@
-<?php
-require('db.php');
-include("auth.php");
-$id=$_REQUEST['id'];
-$query = "SELECT * from new_record where id='".$id."'"; 
-$result = mysqli_query($con, $query) or die ( mysqli_error());
-$row = mysqli_fetch_assoc($result);
-?>
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Update Record</title>
-<link rel="stylesheet" href="css/style.css" />
+<title>ITF Lab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  p.ex1 {
+    margin-top: 25px;
+  }
+  </style>
 </head>
 <body>
 <?php
-$status = "";
-if(isset($_POST['new']) && $_POST['new']==1)
+
+$conn = mysqli_init();
+mysqli_real_connect($conn, 'thanapon-226.mysql.database.azure.com', 'Jame@thanapon-226', 'thanapon-19245', 'ITFLab', 3306);
+if (mysqli_connect_errno($conn))
 {
-$id=$_REQUEST['id'];
-$trn_date = date("Y-m-d H:i:s");
-$name =$_REQUEST['name'];
-$age =$_REQUEST['age'];
-$submittedby = $_SESSION["username"];
-$update="update new_record set trn_date='".$trn_date."',
-name='".$name."', age='".$age."',
-submittedby='".$submittedby."' where id='".$id."'";
-mysqli_query($con, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='view.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
-}else {
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+
+
+$name = $_POST['name'];
+$comment = $_POST['comment'];
+
+
+$sql = "UPDATE guestbook SET comment='$comment' WHERE name='$name'";
+
+if (mysqli_query($conn, $sql)) {
+    echo "<center>Edit Successfully</center>";
+  } else {
+    echo "<center>Error: </center>" . $sql . "<br>" . mysqli_error($conn);
+  }
+
+mysqli_close($conn);
 ?>
-<div>
-<form name="form" method="post" action=""> 
-<input type="hidden" name="new" value="1" />
-<input name="id" type="hidden" value="<?php echo $row['id'];?>" />
-<p><input type="text" name="name" placeholder="Enter Name" 
-required value="<?php echo $row['name'];?>" /></p>
-<p><input type="text" name="age" placeholder="Enter Age" 
-required value="<?php echo $row['age'];?>" /></p>
-<p><input name="submit" type="submit" value="Update" /></p>
-</form>
-<?php } ?>
-</div>
+
+<div class="container">
+  <center><a href="show.php"><input type="button" value="Show" class="btn btn-info" class="ex1"></a></center>
 </div>
 </body>
 </html>
