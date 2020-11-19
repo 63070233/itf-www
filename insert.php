@@ -16,7 +16,7 @@
 <?php
 
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'itf-nattapong.mysql.database.azure.com', 'it63070233@itf-nattapong', 'WGFuhe86', 'ITFLAB', 3306);
+mysqli_real_connect($conn, 'tanadon.mysql.database.azure.com', 'tanadonparosin@tanadon', 'Nexus404', 'itflab', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
@@ -32,10 +32,17 @@ $sql = "INSERT INTO guestbook (Name , Comment , Link) VALUES ('$name', '$comment
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+  
+    echo "<center>New record created successfully</center>";
   } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "<center>Error:</center> " . $sql . "<br>" . mysqli_error($conn);
   }
   
 mysqli_close($conn);
 ?>
+
+<div class="container">
+  <center><a href="show.php"><input type="button" value="Show" class="btn btn-info" class="ex1"></a></center>
+</div>
+</body>
+</html>
