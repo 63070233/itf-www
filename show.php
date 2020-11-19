@@ -1,7 +1,7 @@
 <html>
 <head>
-<title>ITF Lab Show information</title>
-<meta charset="utf-8">
+    <title>show information</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -9,9 +9,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
 body {
-  background-color: LIGHTSALMON;
+background-color: LIGHTSALMON;
 }
-</style>
+    </style>
 </head>
 <body>
 <?php
@@ -23,8 +23,10 @@ if (mysqli_connect_errno($conn))
 }
 $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
-<table class="table table-hover table-bordered table-center" style="width:800px">
-  <tr class="table-primary" >
+<div class="container">           
+  <table class="table table-dark table-striped">
+    <thead>
+  <tr>
     <th width="100"> <div align="center">Name</div></th>
     <th width="350"> <div align="center">Comment </div></th>
     <th width="200"> <div align="center">Link </div></th>
@@ -35,10 +37,10 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 while($Result = mysqli_fetch_array($res))
 {
 ?>
-  <tr class="table-primary">
-    <td><?php echo $Result['Name'];?></div></td>
-    <td><?php echo $Result['Comment'];?></td>
-    <td><?php echo $Result['Link'];?></td>
+  <tr class="table-success text-dark">
+    <td align="center"><?php echo $Result['Name'];?></div></td>
+    <td align="center"><?php echo $Result['Comment'];?></td>
+    <td align="center"><?php echo $Result['Link'];?></td>
     <td align="center"><a href="https://63070233.azurewebsites.net/form_delete.html?id=<?php echo $Result['id']; ?>">ลบ</a></td>
     <td align="center"><a href="https://63070233.azurewebsites.net/form_edit.html"?id=<?php echo $Result['id']; ?>>แก้ไข</a></td>
   </tr>
@@ -46,9 +48,11 @@ while($Result = mysqli_fetch_array($res))
 }
 ?>
 </table>
+<center><h1>
+<button type="button" class="btn btn-warning"><a href="form.html">เพิ่ม</a></button></center></h1>
 <?php
 mysqli_close($conn);
 ?>
-<button type="button" class="btn btn-warning"><a href="form.html">เพิ่ม</a></button></center></h1>
+
 </body>
 </html>
